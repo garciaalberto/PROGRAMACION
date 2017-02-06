@@ -64,7 +64,7 @@ public class Estacion {
 	public void consultarAnclajes(){
 		for (int i = 0; i < getAnclajes().length; i++){
 			if (getAnclajes()[i] == null){
-				System.out.println("Sitio libre en la posición " + i);
+				System.out.println("Sitio libre en la posición " + (i+1));
 			}else{
 			System.out.println("Sitio ocupado por la bicicleta: " + getAnclajes()[i].getId());
 			}
