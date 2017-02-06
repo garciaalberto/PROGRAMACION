@@ -28,14 +28,8 @@ public class Estacion {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getDireccion() {
 		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
 	}
 	public int getNumeroAnclajes() {
 		return numeroAnclajes;
@@ -105,4 +99,3 @@ public class Estacion {
 		return ThreadLocalRandom.current().nextInt(0, getAnclajes().length);
 	}
 }
-
