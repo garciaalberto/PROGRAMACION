@@ -88,6 +88,7 @@ public class Estacion {
 			}
 			mostrarBicicleta(getAnclajes()[numeroAnclaje], numeroAnclaje);
 			getAnclajes()[numeroAnclaje] = null;
+			setNumeroAnclajes(getNumeroAnclajes()+1);
 		}
 	}
 	
