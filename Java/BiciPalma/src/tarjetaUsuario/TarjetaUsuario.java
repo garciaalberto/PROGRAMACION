@@ -4,7 +4,7 @@ public class TarjetaUsuario {
 
 	// Variables privadas
 	private String id;
-	private Boolean activada;
+	private Boolean activada = false;
 	
 	// Constructores
 	public TarjetaUsuario() {
