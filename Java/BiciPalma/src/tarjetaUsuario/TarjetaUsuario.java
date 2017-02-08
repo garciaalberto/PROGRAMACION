@@ -4,7 +4,7 @@ public class TarjetaUsuario {
 
 	// Variables privadas
 	private String id;
-	private Boolean activada = false;
+	private Boolean activada;
 	
 	// Constructores
 	public TarjetaUsuario() {
@@ -20,9 +20,14 @@ public class TarjetaUsuario {
 	public String getId() {
 		return id;
 	}
-	
+	public void setId(String id) {
+		this.id = id;
+	}
 	public Boolean isActivada() {
 		return activada;
+	}
+	public void setActivada(Boolean activada) {
+		this.activada = activada;
 	}
 	
 }

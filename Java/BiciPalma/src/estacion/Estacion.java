@@ -7,10 +7,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Estacion {
 
 	// Variables privadas
-	private int id;
-	private String direccion;
-	private int numeroAnclajes;
-	private Bicicleta[] anclajes = new Bicicleta[numeroAnclajes];
+	private int id = 0;
+	private String direccion = null;
+	private int numeroAnclajes = 0;
+	private Bicicleta[] anclajes = null;
 	
 	// Constructores
 	public Estacion(){
@@ -26,22 +26,19 @@ public class Estacion {
 	
 	// Setters y Getters
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public String getDireccion() {
-		return direccion;
+		return this.direccion;
 	}
 	public int getNumeroAnclajes() {
-		return numeroAnclajes;
+		return this.numeroAnclajes;
 	}
-	public void setNumeroAnclajes(int numeroAnclajes) {
-		this.numeroAnclajes = numeroAnclajes;
-	}
+
 	public Bicicleta[] getAnclajes() {
-		return anclajes;
+		return this.anclajes;
 	}
 	public void setAnclajes(Bicicleta bicicleta) {
-		this.anclajes = anclajes;
 	}
 	
 	// Métodos
@@ -52,7 +49,13 @@ public class Estacion {
 	}
 	
 	public int anclajesLibres(){
-		return getNumeroAnclajes();
+		int libres = 0;
+		for (Bicicleta anclaje : getAnclajes()){
+			if (anclaje == null){
+				libres ++;
+			}
+		}
+		return libres;
 	}
 	
 	public void consultarAnclajes(){
@@ -66,14 +69,14 @@ public class Estacion {
 	}
 	
 	public void anclarBicicleta(Bicicleta bicicleta){
-		setAnclajes(getAnclajes()[getNumeroAnclajes() - 1] = bicicleta);	
-		setNumeroAnclajes(getNumeroAnclajes() - 1);
-		mostrarAnclaje(bicicleta, getNumeroAnclajes());
+		setAnclajes(getAnclajes()[getAnclajes().length - anclajesLibres()] = bicicleta);	
+		anclajesLibres();
+		mostrarAnclaje(bicicleta, anclajesLibres());
 		}
 	
 	public void mostrarAnclaje(Bicicleta bicicleta,int numeroAnclaje){
 		System.out.println("ID Bicicleta: " + bicicleta.getId());
-		System.out.println("Anclaje usado: " + (getNumeroAnclajes() + 1));
+		System.out.println("Anclaje usado: " + (getAnclajes().length - anclajesLibres()));
 	}
 	
 	public Boolean leerTarjetaUsuario(TarjetaUsuario tarjetaUsuario){
@@ -88,7 +91,7 @@ public class Estacion {
 			}
 			mostrarBicicleta(getAnclajes()[numeroAnclaje], numeroAnclaje);
 			getAnclajes()[numeroAnclaje] = null;
-			setNumeroAnclajes(getNumeroAnclajes()+1);
+			anclajesLibres();
 		}
 	}
 	
