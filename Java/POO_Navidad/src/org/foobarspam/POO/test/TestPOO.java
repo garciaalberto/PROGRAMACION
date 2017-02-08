@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.foobarspam.POO.tablaasignacion.*;
 import org.foobarspam.POO.DNI.*;
 import org.foobarspam.POO.cuentacorriente.*;
+import org.foobarspam.POO.hora.*;
 
 public class TestPOO {
 
@@ -62,4 +63,19 @@ public class TestPOO {
 		assertEquals(true, cuentaCorriente1.saldoNegativo());
 	}
 	
+	@Test
+	public void testGetHora(){
+		Hora hora1 = new Hora(01, 30, 56);
+		assertEquals("01:30:56", hora1.getHora());
+		Hora hora2 = new Hora(20, 78, 91);
+		assertEquals("20:00:00", hora2.getHora());
+		Hora hora3 = new Hora(-12, 32, -3);
+		assertEquals("00:32:00", hora3.getHora());
+	}
+	
+	@Test 
+	public void testImprimirHora(){
+		Hora hora = new Hora(01, 30, 56);
+		hora.imprimirHora();
+	}
 }
