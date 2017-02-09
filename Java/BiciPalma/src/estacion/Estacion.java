@@ -96,7 +96,7 @@ public class Estacion {
 	}
 	
 	public void mostrarBicicleta(Bicicleta bicicleta,int numeroAnclaje){
-		System.out.println("Se va a retirar la bicicleta " + bicicleta.getId() + " de la posición " + numeroAnclaje);
+		System.out.println("Se va a retirar la bicicleta " + bicicleta.getId() + " de la posición " + (numeroAnclaje+1));
 	}
 	
 	public int generarAnclaje(){
