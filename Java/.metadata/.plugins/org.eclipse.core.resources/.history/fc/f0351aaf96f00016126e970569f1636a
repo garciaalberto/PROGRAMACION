@@ -4,7 +4,7 @@ package org.foobarspam.medicineclash.patient;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import org.foobarspam.medicineclash.medicine.*;
+import org.foobarspam.medicineclash.*;
 
 public class Patient {
 

@@ -1,0 +1,14 @@
+package org.foobarspam.medicineclash.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testMedicineClash {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

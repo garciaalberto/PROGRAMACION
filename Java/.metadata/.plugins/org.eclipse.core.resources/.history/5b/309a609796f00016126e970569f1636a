@@ -3,7 +3,6 @@ package org.foobarspam.medicineclash.medicine;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import org.foobarspam.medicineclash.prescription.*;
 
 public class Medicine {
     
