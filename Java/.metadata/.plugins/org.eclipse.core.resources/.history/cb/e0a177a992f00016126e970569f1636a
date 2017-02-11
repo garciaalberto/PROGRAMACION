@@ -1,0 +1,5 @@
+package org.foobarspam.medicineclash.patient;
+
+public class Patient {
+
+}
