@@ -9,7 +9,7 @@ public class CuentaCorriente {
 	private String direccion;
 	private String telefono;
 	private DNI nif;
-	private double saldo;
+	private Double saldo;
 	
 	// Constructores
 	public CuentaCorriente() {
@@ -26,11 +26,11 @@ public class CuentaCorriente {
 	}
 
 	// Setters y getters
-	public double getSaldo() {
+	public Double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
+	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 
@@ -55,12 +55,12 @@ public class CuentaCorriente {
 	}
 	
 	// Métodos
-	public double retirarDinero(double dinero){
+	public Double retirarDinero(Double dinero){
 		setSaldo(getSaldo() - dinero);
 		return getSaldo();
 	}
 	
-	public double ingresarDinero(double dinero){
+	public Double ingresarDinero(Double dinero){
 		setSaldo(getSaldo() + dinero);
 		return getSaldo();
 	}

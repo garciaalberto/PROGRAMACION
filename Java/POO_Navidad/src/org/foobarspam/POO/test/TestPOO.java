@@ -6,6 +6,7 @@ import org.foobarspam.POO.tablaasignacion.*;
 import org.foobarspam.POO.DNI.*;
 import org.foobarspam.POO.cuentacorriente.*;
 import org.foobarspam.POO.hora.*;
+import org.foobarspam.POO.tarjetaprepago.*;
 
 public class TestPOO {
 
@@ -51,7 +52,7 @@ public class TestPOO {
 	public void testConsultarCuenta(){
 		DNI dniA = new DNI("41585112P");
 		CuentaCorriente cuentaCorriente1 = new CuentaCorriente("Alberto", "García", "Dirección Inventada nº123", "971554600", dniA, 11.50);
-		cuentaCorriente1.consultarCuenta();
+		cuentaCorriente1.consultarCuenta(); // Should print account information
 	}
 	
 	@Test
@@ -76,6 +77,37 @@ public class TestPOO {
 	@Test 
 	public void testImprimirHora(){
 		Hora hora = new Hora(01, 30, 56);
-		hora.imprimirHora();
+		hora.imprimirHora(); // Should equal to 01:30:56
+	}
+	
+	@Test
+	public void testIngresarSaldo(){
+		DNI dniA = new DNI("41585112P");
+		TarjetaPrepago tarjetaPrepago1 = new TarjetaPrepago("971554600", dniA, 10.00);
+		assertEquals(15.00, tarjetaPrepago1.ingresarSaldo(5.00), 0.001);
+		TarjetaPrepago tarjetaPrepago2 = new TarjetaPrepago("123456789", dniA, 0.00);
+		assertEquals(10.00, tarjetaPrepago2.ingresarSaldo(10.00), 0.001);
+	}
+	
+	@Test
+	public void testEnviarMensaje(){
+		DNI dniA = new DNI("41585112P");
+		TarjetaPrepago tarjetaPrepago1 = new TarjetaPrepago("971554600", dniA, 10.00);
+		assertEquals(9.10, tarjetaPrepago1.enviarMensaje(10), 0.001);
+	}
+	
+	@Test
+	public void testRealizarLlamada(){
+		DNI dniA = new DNI("41585112P");
+		TarjetaPrepago tarjetaPrepago1 = new TarjetaPrepago("971554600", dniA, 10.00);
+		assertEquals(8.05, tarjetaPrepago1.realizarLlamada(180), 0.001);
+		System.out.println(tarjetaPrepago1.getConsumo().getHora()); // Should equal to 00:03:00
+	}
+	
+	@Test
+	public void testConsultarTarjeta(){
+		DNI dniA = new DNI("41585112P");
+		TarjetaPrepago tarjetaPrepago1 = new TarjetaPrepago("971554600", dniA, 10.00);
+		tarjetaPrepago1.consultarTarjeta(); // Should print prepaid cart information
 	}
 }

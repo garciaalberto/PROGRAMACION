@@ -1,0 +1,14 @@
+package org.foobarspam.POO.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testPOONavidad {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
