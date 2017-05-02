@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: hello
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: alberto
+Implementation-Vendor-Id: org.foobarspam
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/hello/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
